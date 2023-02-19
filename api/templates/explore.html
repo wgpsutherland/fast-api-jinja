@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Explore Data Diag</title>
+        <link
+            href="{{ url_for('static', path='/style.css') }}"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <h1>{{ data.title }}</h1>
+
+        {% if data.title != 'datasets' -%}
+            <a href="..">.. back</a>
+        {%- endif %} 
+        
+        {%- for item in data.items %}
+            <p>
+                <a href="{{ item.url }}">{{ item.name }}</a>
+            </p>
+        {% endfor %}
+
+    </body>
+</html>
